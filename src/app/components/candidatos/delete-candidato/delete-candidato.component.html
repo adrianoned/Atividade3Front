@@ -1,0 +1,21 @@
+<h2>Você deseja remover esse candidato?</h2>
+
+<div *ngIf="request">
+    <ul>
+        <li>
+            <label>Id: <strong>{{request.id}}</strong>  </label>
+           <br>
+            <label>Nome: <strong>{{request.nome}}</strong>  </label>
+            <br>
+            <label>Data de nascimento: <strong>{{request.dataNascimento}}</strong>  </label>
+          
+        </li>
+    </ul>
+  
+    <p class="text-center">
+   <button (click)="excluir()"class="button">Confirmar</button>    
+    </p>
+    <p class="text-center">
+   <button (click)="cancelar()"class="button">Cancelar</button>
+    </p>
+</div>

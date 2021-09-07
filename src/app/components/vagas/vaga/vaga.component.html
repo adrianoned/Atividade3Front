@@ -1,0 +1,15 @@
+<h1>Vagas</h1>
+<p class="text-center">
+    <button (click)="inserir()" class="buttonNovo" >Inserir</button>    
+     </p>
+     <br>
+     <br>
+     <br><br>
+<ul *ngIf="response">
+    <li *ngFor= "let vaga of response">
+      {{ vaga.id }} -
+      {{vaga.descricao}} 
+      <button routerLink="/vaga/update/{{vaga.id}}"><i class="far fa-eye"></i></button>
+      <button routerLink="/vaga/delete/{{vaga.id}}"><i class="far fa-trash-alt"></i></button>
+    </li>
+  </ul>

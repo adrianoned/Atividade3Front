@@ -1,0 +1,24 @@
+<h2>Atualizar a Vaga</h2>
+
+<div *ngIf="request">
+    <p class="text-center">
+        <label>Descrição
+            <input placeholder="Insira o candidato"[(ngModel)] = "request.nome">
+        </label>
+        </p>
+        <br>
+    
+        <p class="text-center">
+            <label>Data de nascimento
+                <input type="date" [(ngModel)] = "request.dataNascimento">
+            </label>
+            </p>
+            <br>
+            <p class="text-center">
+                <button (click)="alterar()" class="button">Atualizar</button>
+                 </p>
+                 <p class="text-center">
+                <button (click)="voltar()" class="button">Cancelar</button>
+                 </p>
+</div>
+

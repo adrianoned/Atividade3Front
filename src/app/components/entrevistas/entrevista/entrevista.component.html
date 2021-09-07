@@ -1,0 +1,16 @@
+<h1>Entrevistas</h1>
+<p class="text-center">
+    <button (click)="inserir()" class="buttonNovo" >Inserir</button>    
+     </p>
+     <br>
+     <br>
+     <br><br>
+<ul *ngIf="response">
+    <li *ngFor= "let entrevista of response">
+      {{ entrevista.id }} -
+      {{entrevista.candidato.nome}} - 
+      {{entrevista.vaga.descricao}} 
+      <button routerLink="/entrevista/update/{{entrevista.id}}"><i class="far fa-eye"></i></button>
+      <button routerLink="/entrevista/delete/{{entrevista.id}}"><i class="far fa-trash-alt"></i></button>
+    </li>
+  </ul>

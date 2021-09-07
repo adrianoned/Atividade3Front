@@ -1,0 +1,15 @@
+<h2>Atualizar a Vaga</h2>
+
+<div *ngIf="request">
+    <label>Descrição
+        <input placeholder="Insira a vaga"[(ngModel)] = "request.descricao">
+    </label>
+    <br>
+    <p class="text-center">
+   <button (click)="alterar()" class="button">Atualizar</button>
+    </p>
+    <p class="text-center">
+   <button (click)="voltar()" class="button">Cancelar</button>
+    </p>
+</div>
+

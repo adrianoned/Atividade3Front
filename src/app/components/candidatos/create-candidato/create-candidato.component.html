@@ -1,0 +1,21 @@
+<h2>Cadastrar Candidato</h2>
+
+<div>
+    <p class="text-center">
+    <label>Descrição
+        <input placeholder="Insira o candidato"[(ngModel)] = "request.nome">
+    </label>
+    </p>
+    <br>
+
+    <p class="text-center">
+        <label>Data de nascimento
+            <input type="date" [(ngModel)] = "request.dataNascimento">
+        </label>
+        </p>
+        <br>
+
+    <p class="text-center">
+   <button (click)="salvar()"  class="button">Gravar</button>
+</p>
+</div>

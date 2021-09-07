@@ -1,0 +1,16 @@
+<h1>Tecnologias</h1>
+<p class="text-center">
+    <button (click)="inserir()" class="buttonNovo" >Inserir</button>    
+     </p>
+     <br>
+     <br>
+     <br><br>
+<ul *ngIf="responseTecnologia">
+    <li *ngFor= "let tecnologia of responseTecnologia">
+      {{ tecnologia.id }} -
+      {{tecnologia.descricao}} 
+      <button routerLink="/tecnologia/update/{{tecnologia.id}}"><i class="far fa-eye"></i></button>
+      <button routerLink="/tecnologia/delete/{{tecnologia.id}}"><i class="far fa-trash-alt"></i></button>
+    </li>
+  </ul>
+

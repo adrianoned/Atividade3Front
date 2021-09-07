@@ -1,0 +1,16 @@
+<h1>Candidatos</h1>
+<p class="text-center">
+    <button (click)="inserir()" class="buttonNovo" >Inserir</button>    
+     </p>
+     <br>
+     <br>
+     <br><br>
+<ul *ngIf="response">
+    <li *ngFor= "let candidato of response">
+      {{ candidato.id }} -
+      {{candidato.nome}} -
+      {{candidato.dataNascimento}} 
+      <button routerLink="/candidato/update/{{candidato.id}}"><i class="far fa-eye"></i></button>
+      <button routerLink="/candidato/delete/{{candidato.id}}"><i class="far fa-trash-alt"></i></button>
+    </li>
+  </ul>

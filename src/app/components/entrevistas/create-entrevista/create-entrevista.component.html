@@ -1,0 +1,104 @@
+<h2>Entrevista</h2>
+
+<div>
+
+    
+    <p class="text-center">
+        <label>Selecione uma vaga
+            <select class="form-control" [(ngModel)]="request.vagaId" >
+            <option value="0">--Selecione--</option>
+            <option *ngFor="let vaga of responseVaga" value= {{vaga.id}}>
+                {{vaga.descricao}}
+            </option>
+        </select>
+        </label>
+        </p>
+        <br>
+
+        <p class="text-center">
+            <label>Selecione um candidato
+                <select class="form-control" [(ngModel)]="request.candidatoId">
+                <option value="0">--Selecione--</option>
+                <option *ngFor="let candidato of responseCandidato" value= {{candidato.id}}>
+                    {{candidato.nome}}
+                </option>
+            </select>
+            </label>
+            </p>
+            <br>
+
+            <label *ngFor="let tecnologia of responseTecnologias">
+                <!--
+                  - Use `value="{{fruit.name}}"` to give the input a real value, in case the form gets submitted
+                    traditionally
+              
+                  - Use `ng-checked="fruit.selected"` to have the checkbox checked based on some angular expression
+                    (no two-way-data-binding)
+              
+                  - Use `ng-model="fruit.selected"` to utilize two-way-data-binding. Note that `.selected`
+                    is arbitrary. The property name could be anything and will be created on the object if not present.
+                -->
+                <input
+                  type="checkbox"
+                  name="SelectTecnologias"
+                  value="{{tecnologia.id}"
+                  ng-model="tecnologia.selected"
+                > {{tecnologia.descricao}}
+              </label>
+
+
+
+            <h3>Options</h3>
+            {{responseTecnologias | json}}
+            <h3>Selected</h3>
+            {{selecionados | json}}
+            <br>
+            <h3>List</h3>
+            <div *ngFor="let item of responseTecnologias">
+              <input type="checkbox" 
+              (change)="onChange($event.target, item)"
+              [checked]="checked(item)"
+            >
+              {{item.descricao}}
+            </div>
+            <br>
+            {{selecionados.length}} items selected <br>
+
+
+            
+    <p class="text-center">
+    <label>Observações
+        
+    </label>
+    </p>
+    <textarea placeholder="Insira as observações" [(ngModel)] = "request.observacoes" rows="5" cols="33">  </textarea>
+    
+    <br>
+    <p class="text-center">
+   <button (click)="salvar()"  class="button">Gravar</button>
+</p>
+</div>
+
+
+<script>
+    
+    app.controller('ObjectArrayCtrl', ['$scope', 'filterFilter', function ObjectArrayCtrl($scope, filterFilter) {
+
+
+
+// Selected fruits
+$scope.selection = [];
+
+// Helper method to get selected fruits
+$scope.SelectTecnologias = function SelectTecnologias() {
+  return filterFilter($scope.tecnologia, { selected: true });
+};
+
+// Watch fruits for changes
+$scope.$watch('responseTecnologias|filter:{selected:true}', function (nv) {
+  $scope.selection = nv.map(function (tecnologia) {
+    return tecnologia.descricao;
+  });
+}, true);
+}]);
+</script>
