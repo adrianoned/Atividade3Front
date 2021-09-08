@@ -12,6 +12,7 @@ body {
     background: linear-gradient(60deg, #3023ae 0%, #807f80 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3023ae', endColorstr='#807f80', GradientType=1);
     height: 100%;
+    width: 100%;
   }
   
   button {

@@ -4,14 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TecnologiaComponent } from './components/tecnologia/tecnologia.component';
+import { TecnologiaComponent } from './components/tecnologias/tecnologia/tecnologia.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { Error404Component } from './pages/error404/error404.component';
-import { CreateTecnologiaComponent } from './components/create-tecnologia/create-tecnologia.component';
-import { UpdateTecnologiaComponent } from './components/update-tecnologia/update-tecnologia.component';
-import { DeleteTecnologiaComponent } from './components/delete-tecnologia/delete-tecnologia.component';
+import { CreateTecnologiaComponent } from './components/tecnologias/create-tecnologia/create-tecnologia.component';
+import { UpdateTecnologiaComponent } from './components/tecnologias/update-tecnologia/update-tecnologia.component';
+import { DeleteTecnologiaComponent } from './components/tecnologias/delete-tecnologia/delete-tecnologia.component';
 import { VagaComponent } from './components/vagas/vaga/vaga.component';
 import { CreateVagaComponent } from './components/vagas/create-vaga/create-vaga.component';
 import { UpdateVagaComponent } from './components/vagas/update-vaga/update-vaga.component';
